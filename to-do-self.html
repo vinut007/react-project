@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+        .container{
+            border: 1px solid #000;
+            width: 350px;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 5px;
+            align-items: center;
+            
+
+           
+            
+        }
+        #main{
+            width: 90%;
+            height: 50px;
+            /* border: 1px solid #000; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #main span{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3px;
+        }
+        #main1{
+            width: 90%;
+            height: 50px;
+            /* border: 1px solid #000; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        button{
+            padding:5px 10px;
+            
+            /* border: 1px solid #000; */
+            border: none;
+            border-radius: 2px;
+            background: #ffffff;
+            cursor: pointer;
+            
+             
+        }
+        input{
+             width:200px;
+             
+            height: 20px;
+        }
+        #box0{
+            width: 90%;
+            height: 50px;
+            /* border: #000 solid 1px; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        #box{
+            width: 90%;
+            height: 40px;
+            border: #000 solid 0.5px;
+            display: flex;
+            justify-content: space-around;
+            gap: 100px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            align-items: center;
+           
+            
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+     <div id="main"> <span> <H1 style="color: blue; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> to-do</H1><H1 style="color: coral; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"> List</H1></span></div>
+     <div id="main1">
+        <input type="text" id="input"> <button style="background-color: darkblue; color: #ffffff; " onclick="check()">ADD</button>
+     </div>
+        
+    </div>
+    <script>
+        
+        function check(){
+            let input =document.getElementById("input").value;
+            if(!(input)){
+                alert("enter please");
+            }else{
+                btn();
+            }
+        }
+          
+        function btn(){
+            let input =document.getElementById("input").value;
+            let box = document.createElement("div");
+            let box0= document.createElement("div");
+            box0.appendChild(box);
+            box.innerHTML=`${input} <button id="add" style="background-color: #ff0000; color: #ffffff; class=" last" ; onclick="removeMe()"  >REMOVE</button>`
+           
+           let cont=document.getElementsByClassName("container")[0];
+           box.id="box";
+           box0.id="box0";
+           console.log(box0);
+           cont.appendChild(box0);
+           box0.className="new";
+           console.log(box);
+             
+
+           
+            
+        }
+         
+        function removeMe(){
+         let x=document.querySelector(".new");
+         
+         x.remove();
+         console.log(x);
+        }
+       
+        
+        
+    </script>
+    
+</body>
+</html>
