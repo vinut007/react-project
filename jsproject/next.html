@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body id="hh">
+<h1>JavaScript HTML Events</h1>
+<h2>The oninput Attribute</h2>
+
+Enter your name: <input type="text" id="fname" oninput="bgchange()">
+<p>When you write in the input field, a function is triggered to transform the input to upper case.</p>
+
+<script>
+function bgchange() {
+  const x = document.getElementById("fname").value;
+  const y = document.getElementById("hh");
+  
+  console.log("heloo")
+  y.style.backgroundColor=x;
+  
+}
+</script>
+
+</body>
+</html>

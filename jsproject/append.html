@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Create Box</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      display: inline-block;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+
+<button onclick="createBox()">Create Box</button>
+<div id="container"></div>
+
+<script>
+function randomColor() {
+  let chars = "1234567890ABCDEF";
+  let hex = "";
+  for (let i = 0; i < 6; i++) {
+    hex += chars[Math.floor(Math.random() * chars.length)];
+  }
+  return "#" + hex;
+}
+
+function createBox() {
+  let box = document.createElement("div");  // make a <div>
+  box.className = "box";                    // give it box style
+  box.style.backgroundColor = randomColor(); // random bg color
+  document.getElementById("container").appendChild(box); // insert into page
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0%;
+            margin: 0%;
+        }
+        
+    </style>
+</head>
+<body>
+    <form action="" id="form">
+        <h4>First Name   :</h4> <input type="text" id="Firstname" placeholder="enter name"><br>
+        <h4>Last Name    :</h4> <input type="text" id="Lastname" placeholder="enter "><br>
+        <h4>birth Date   :</h4> <input type="date" id="BirthDate" placeholder="enter "><br>
+        <h4>qualification:</h4> <input type="text" id="Quali" placeholder="enter "><br>
+        <h4>Phno         :</h4> <input type="text" id="Phno" placeholder="enter "><br>
+        <h4>Address      :</h4> <input type="text" id="Add" placeholder="enter "><br>
+        <input type="submit" id="sum">
+        
+
+    </form>
+    <br>
+
+   First Name: <p id="p1"> </p><br>
+   Last Name   <p id="p2"></p><br>
+   birth Date  <p id="p3"></p><br>
+   qualification: <p id="p4"></p><br>
+   Phno <p id="p5"></p><br>
+   Address  <p id="p6"></p><br>
+
+    <script>
+       
+        document.getElementById("form").addEventListener("submit",function(event){
+            event.preventDefault();
+            let fname =document.getElementById("Firstname").value;
+        
+        let lname =document.getElementById("Lastname").value;
+        let birth =document.getElementById("BirthDate").value;
+        let quali =document.getElementById("Quali").value;
+        let Phno =document.getElementById("Phno").value;
+        let Add =document.getElementById("Add").value;
+        console.log("First Name:", fname);
+         document.getElementById("p1").innerHTML=fname;
+         document.getElementById("p2").innerHTML=lname;
+         document.getElementById("p3").innerHTML=birth;
+         document.getElementById("p4").innerHTML=quali;
+         document.getElementById("p5").innerHTML=Phno;
+         document.getElementById("p6").innerHTML=Add;
+        
+         
+        })
+
+        
+        
+        
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div class="weather">
+        <div class="weather-box1">
+           <span id="span-input"> <input type="text" id="input" ></span>
+            <span class="span-search " onclick="ck()" ><img src="search.png" alt=""></span>
+        </div>
+        <div class="weather-box1">
+            <img src="mist.png" alt="">
+        </div>
+        <div class="weather-box1">
+            <h1>7<sup>o</sup>c</h1>
+             <h6 id="city"></h6>
+        </div>
+        <div class="weather-box1">
+            <span> 
+                <span class="img"> <img src="humidity.png" alt=""></span>
+                <span class="per">48%</span>
+
+            </span>
+            <span>
+                <span class="img"> <img src="wind.png" alt=""></span>
+                <span class="per" id="wind"></span>
+
+                
+            </span>
+        </div>
+    </div>
+    <button onclick="weathercheck()"> Enter</button>
+    <script>
+        let input;
+        
+        function ck(){
+       input=document.getElementById("input").value;
+       document.getElementById("city").innerHTML=input;
+       
+        weathercheck();
+       
+        }
+        
+        
+        
+      
+        
+        
+
+
+        let apikey="2b9229d542a6d395962172e810141579";
+       
+        async function weathercheck() {
+            let apiurl=`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=matric`;
+            const responce= await fetch(apiurl+`&appid=${apikey}`)
+            const result = await responce.json();
+            console.log(result);
+            let per=result.wind.speed;
+            let weather = result.weather[0].main;
+
+            console.log(weather);
+            console.log(per);
+            document.getElementById("wind").innerHTML=per;
+
+        
+            
+        }
+
+    </script>
+</body>
+</html>

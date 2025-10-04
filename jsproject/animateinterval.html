@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="start" onclick="start()">START</button>
+    <button id="stop" onclick="stop()">STOP</button>
+    
+
+    <script>
+        let bg = document.getElementsByTagName("body");
+        let st = document.getElementById("start");
+        let sp = document.getElementById("stop");
+        let color = "1234567890ABCDEF";
+        
+        function randum(){
+            let ho =""
+            for(let i=0;i<4;i++ ){
+                    let hex=Math.floor(Math.random()*color.length);
+                    
+                    ho +=color[hex];
+                    
+                    
+                    
+                }
+                return ho;
+        }
+          
+
+let invalid;
+          
+        function start(){
+            
+           invalid=  setInterval(()=>{
+               let cool="#"+randum();
+               console.log(cool);
+               
+                document.body.style.backgroundColor=cool;
+                
+
+            } ,2000)
+            
+        }
+        function stop(){
+            clearInterval(invalid)
+
+        }
+    </script>
+</body>
+</html>
